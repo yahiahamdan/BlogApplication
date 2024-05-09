@@ -1,10 +1,11 @@
 from django.shortcuts import render
-from django.http import Http404
+from django.http import Http404,HttpRequest
 from django.shortcuts import get_object_or_404
 from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 from .models import Post
 from django.views.generic import ListView
-
+from .forms import EmailPostForm
+from django.core.mail import send_mail
 # Create your views here.
 
 class PostListView(ListView):
@@ -15,6 +16,27 @@ class PostListView(ListView):
   context_object_name='posts'
   paginate_by=3
   template_name='blog/post/list.html'
+
+def post_share(request,post_id):
+  post=get_object_or_404(Post,id=post_id,status=Post.Status.PUBLISHED)
+  sent=False
+  if request.method=='POST':
+    #FORM WITH SUBMITTED
+    form=EmailPostForm(request.POST)
+    if(form.is_valid()):
+      #forms field passed vlaidationi
+      cd=form.cleaned_data
+      #send email 
+      post_url=request.build_absolute_uri(post.get_absolute_url())
+      subject=f"{cd['name']} recommends you read {[post.title]} "
+      message=(f'read {post.title} at {post_url}\n'
+               f'{cd['name']}\'s comments :{cd['comments']}'
+              )
+      send_mail(subject,message,'hamdanyahia2@gmail.com',[cd['to']])
+      sent=True
+  else:
+      form=EmailPostForm()
+  return render(request,'blog/post/share.html',{'post':post,'form':form,'sent':sent})
 
 
 def post_list(request):
