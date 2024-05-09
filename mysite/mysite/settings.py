@@ -39,6 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'blog'
 ]
+#email server configuration 
+EMAIL_HOST='smtp.gmail.com'
+EMAIL_HOST_USER='hamdanyahia2@gmail.com'
+EMAIL_HOST_PASSWORD='muiz bewx arer ttwd'
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -84,6 +91,9 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
+
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
