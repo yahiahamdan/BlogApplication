@@ -3,7 +3,8 @@ from  django.utils import timezone
 from django.conf import settings
 from django.contrib.auth.models import User
 from django.urls import reverse
-from django.http import HttpResponseRedirect 
+from django.http import HttpResponseRedirect
+from taggit.managers import TaggableManager 
 # Create your models here.
 class PublishedManager(models.Manager):
     def get_queryset(self):
@@ -16,7 +17,7 @@ class Post(models.Model):
     
     title=models.CharField(max_length=250)
     publish=models.DateTimeField(default=timezone.now)
-
+    tags=TaggableManager()
     slug=models.SlugField(max_length=250,unique_for_date='publish')
 
     author=models.ForeignKey(User,on_delete=models.CASCADE,

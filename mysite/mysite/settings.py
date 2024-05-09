@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-     'blog'
+     'blog',
+     'taggit'
 ]
 #email server configuration 
 EMAIL_HOST='smtp.gmail.com'
