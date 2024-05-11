@@ -10,6 +10,11 @@
 <body>
 <div id="content">
     {%block content%}
+    <p class="date">
+        Published {{ post.publish }} by {{ post.author }}
+        </p>
+        {{ post.body|markdown }}
+        <p>
 
     {%endblock%}  
 </div>
