@@ -1,0 +1,53 @@
+
+full functional webstie()
+
+add pagination to the website 
+using canonical url 
+createe seo urls for posts
+send emails with django 
+using djangoo forms to share post via email 
+adding comments to post  
+complex queryset for recomding posts 
+create sitemap using the sitemap framework  
+integreating thired party applications(toggit) tafgs 
+using tags to recommend similar posts 
+custom template tags and filters 
+full text search engine using postgresql 
+
+url -> urls 
+blog/ 
+{
+list of published posts links 
+most commented posts 
+recent posts published 
+}
+
+blog/2024/5/12/first-post-1
+{
+all comments on a the post 
+similar posts : by tagging system 
+form to write comment
+send post by email 
+}
+blog/tag/django
+{
+    get all posts with this specific tag
+}
+
+blog/1/share{
+    form for sending email  
+    share post url via email 
+}
+blog/search
+{
+optimze full text  search engine postgres  
+}
+
+blog/search?query=ff
+{
+all searched results
+}
+blog/1/comment
+{
+you comment has been added 
+}
