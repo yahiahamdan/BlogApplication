@@ -14,7 +14,8 @@ using tags to recommend similar posts
 custom template tags and filters 
 full text search engine using postgresql 
 
-url -> urls 
+
+url -> 
 blog/ 
 {
 list of published posts links 
