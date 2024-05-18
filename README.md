@@ -1,13 +1,13 @@
 # Blog recommendation system :high_brightness:
 
 :man_technologist:  Blog recommendation system allow users to share posts to friends via email and get recommendation to other posts via tags 
-## Table of Contents
+## Table of Contents :muscle:
 - [Features](#features)
 - [Installation](#installation)
 - [Images](#images)
 - [Future Plans](#future-plans)
 
-## Features  :muscle:
+## Features  
 - *send emails* 
 - *integerate third library toggit to provide recommendation to other posts*
 - *view blogs by its specific tag*  
